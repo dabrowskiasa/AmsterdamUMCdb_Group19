@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from .util import read_sql
 
-dirname = os.path.dirname(os.path.abspath(__file__))
+dirname = ''
 
 
 def get_sofa_respiration(con, legacy=False) -> pd.DataFrame:
@@ -21,7 +21,7 @@ def get_sofa_respiration(con, legacy=False) -> pd.DataFrame:
     print('Querying SOFA Respiration...')
 
     if legacy:
-        filename = './sql/common/legacy/pO2_FiO2_estimated.sql'
+        filename = '/usr/local/lib/python3.12/dist-packages/amsterdamumcdb/sql/common/legacy/pO2_pCO2_FiO2.sql'
     else:
         raise NotImplementedError("Work in progress. Function not yet available for OMOP CDM version.")
 
@@ -70,7 +70,7 @@ def get_sofa_cardiovascular_meds(con, legacy=False) -> pd.DataFrame:
     print('Querying SOFA Cardiovascular: vasopressors/inotropes...')
 
     if legacy:
-        filename = './sql/common/legacy/vasopressors_inotropes.sql'
+        filename = '/usr/local/lib/python3.12/dist-packages/amsterdamumcdb/sql/common/legacy/vasopressors_inotropes.sql'
     else:
         raise NotImplementedError("Work in progress. Function not yet available for OMOP CDM version.")
 
@@ -131,7 +131,7 @@ def get_sofa_platelets(con, legacy=False) -> pd.DataFrame:
     # get platelets (thrombocytes)
 
     if legacy:
-        filename = './sql/common/legacy/platelets.sql'
+        filename = '/usr/local/lib/python3.12/dist-packages/amsterdamumcdb/sql/common/legacy/platelets.sql'
     else:
         raise NotImplementedError("Work in progress. Function not yet available for OMOP CDM version.")
 
@@ -167,7 +167,7 @@ def get_sofa_bilirubin(con, legacy=False) -> pd.DataFrame:
     print('Querying SOFA Liver...')
 
     if legacy:
-        filename = './sql/common/legacy/bilirubin.sql'
+        filename = '/usr/local/lib/python3.12/dist-packages/amsterdamumcdb/sql/common/legacy/bilirubin.sql'
     else:
         raise NotImplementedError("Work in progress. Function not yet available for OMOP CDM version.")
 
@@ -197,7 +197,7 @@ def get_sofa_cardiovascular_map(con, legacy=False):
     print('Querying SOFA Cardiovascular: MAP...')
 
     if legacy:
-        filename = './sql/common/mean_abp.sql'
+        filename = '/usr/local/lib/python3.12/dist-packages/amsterdamumcdb/sql/common/legacy/mean_abp.sql'
     else:
         raise NotImplementedError("Work in progress. Function not yet available for OMOP CDM version.")
 
@@ -236,7 +236,7 @@ def get_sofa_cns(con, legacy=False) -> pd.DataFrame:
     print('Querying SOFA Central nervous system...')
 
     if legacy:
-        filename = './sql/common/gcs.sql'
+        filename = '/usr/local/lib/python3.12/dist-packages/amsterdamumcdb/sql/common/legacy/gcs.sql'
     else:
         raise NotImplementedError("Work in progress. Function not yet available for OMOP CDM version.")
 
@@ -334,7 +334,7 @@ def get_sofa_renal_daily_urine_output(con, legacy=False) -> pd.DataFrame:
     print('Querying SOFA Renal: urine output...')
 
     if legacy:
-        filename = './sql/common/urine_output.sql'
+        filename = '/usr/local/lib/python3.12/dist-packages/amsterdamumcdb/sql/common/legacy/urine_output.sql'
     else:
         raise NotImplementedError("Work in progress. Function not yet available for OMOP CDM version.")
 
@@ -377,7 +377,7 @@ def get_sofa_renal_creatinine(con, legacy=False) -> pd.DataFrame:
     # get serum creatinine
 
     if legacy:
-        filename = './sql/common/creatinine_acute_kidney_injury_failure.sql'
+        filename = '/usr/local/lib/python3.12/dist-packages/amsterdamumcdb/sql/common/legacy/creatinine_acute_kidney_injury_failure.sql'
     else:
         raise NotImplementedError("Work in progress. Function not yet available for OMOP CDM version.")
 
