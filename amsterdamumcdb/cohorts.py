@@ -155,7 +155,7 @@ def get_medical_patients(con, legacy=False) -> pd.DataFrame:
     else:
         # gets the SQL source file
         dirname = ''
-        filename = '/usr/local/lib/python3.12/dist-packages/amsterdamumcdb/sql/diagnosis/medical.sql'
+        filename = '/content/drive/MyDrive/AmsterdamUMCdb_Group19/amsterdamumcdb/sql/diagnosis/medical.sql'
         sql_filename = os.path.join(dirname, filename)
 
         with open(sql_filename, 'r') as file:
@@ -178,7 +178,7 @@ def get_cardiothoracic_surgery_patients(con, legacy=False) -> pd.DataFrame:
     else:
         # gets the SQL source file
         dirname = ''
-        filename = '/usr/local/lib/python3.12/dist-packages/amsterdamumcdb/sql/diagnosis/cardiac_surgery.sql'
+        filename = '/content/drive/MyDrive/AmsterdamUMCdb_Group19/amsterdamumcdb/sql/diagnosis/cardiac_surgery.sql'
         sql_filename = os.path.join(dirname, filename)
 
         with open(sql_filename, 'r') as file:
@@ -214,7 +214,7 @@ def get_respiratory_failure_patients(con, legacy=False) -> pd.DataFrame:
     else:
         # gets the SQL source file
         dirname = ''
-        filename = '/usr/local/lib/python3.12/dist-packages/amsterdamumcdb/sql/diagnosis/respiratory_failure.sql'
+        filename = '/content/drive/MyDrive/AmsterdamUMCdb_Group19/amsterdamumcdb/sql/diagnosis/respiratory_failure.sql'
         sql_filename = os.path.join(dirname, filename)
 
         with open(sql_filename, 'r') as file:
@@ -240,7 +240,7 @@ def get_neurosurgery_patients(con, legacy=False) -> pd.DataFrame:
     else:
         # gets the SQL source file
         dirname = ''
-        filename = '/usr/local/lib/python3.12/dist-packages/amsterdamumcdb/sql/diagnosis/neurosurgery.sql'
+        filename = '/content/drive/MyDrive/AmsterdamUMCdb_Group19/amsterdamumcdb/sql/diagnosis/neurosurgery.sql'
         sql_filename = os.path.join(dirname, filename)
 
         with open(sql_filename, 'r') as file:
@@ -265,7 +265,7 @@ def get_gastrointestinal_surgery_patients(con, legacy=False) -> pd.DataFrame:
     else:
         # gets the SQL source file
         dirname = ''
-        filename = '/usr/local/lib/python3.12/dist-packages/amsterdamumcdb/sql/diagnosis/gastro_intestinal_surgery.sql'
+        filename = '/content/drive/MyDrive/AmsterdamUMCdb_Group19/amsterdamumcdb/sql/diagnosis/gastro_intestinal_surgery.sql'
         sql_filename = os.path.join(dirname, filename)
 
         with open(sql_filename, 'r') as file:
@@ -295,7 +295,7 @@ def get_cardiac_arrest_patients(con, legacy=False) -> pd.DataFrame:
     else:
         # gets the SQL source file
         dirname = ''
-        filename = '/usr/local/lib/python3.12/dist-packages/amsterdamumcdb/sql/diagnosis/cardiac_arrest.sql'
+        filename = '/content/drive/MyDrive/AmsterdamUMCdb_Group19/amsterdamumcdb/sql/diagnosis/cardiac_arrest.sql'
         sql_filename = os.path.join(dirname, filename)
 
         with open(sql_filename, 'r') as file:
@@ -323,7 +323,7 @@ def get_vascular_surgery_patients(con, legacy=False) -> pd.DataFrame:
     else:
         # gets the SQL source file
         dirname = ''
-        filename = '/usr/local/lib/python3.12/dist-packages/amsterdamumcdb/sql/diagnosis/vascular_surgery.sql'
+        filename = '/content/drive/MyDrive/AmsterdamUMCdb_Group19/amsterdamumcdb/sql/diagnosis/vascular_surgery.sql'
         sql_filename = os.path.join(dirname, filename)
 
         with open(sql_filename, 'r') as file:
@@ -354,7 +354,7 @@ def get_trauma_patients(con, legacy=False) -> pd.DataFrame:
     else:
         # gets the SQL source file
         dirname = ''
-        filename = '/usr/local/lib/python3.12/dist-packages/amsterdamumcdb/sql/diagnosis/trauma.sql'
+        filename = '/content/drive/MyDrive/AmsterdamUMCdb_Group19/amsterdamumcdb/sql/diagnosis/trauma.sql'
         sql_filename = os.path.join(dirname, filename)
 
         with open(sql_filename, 'r') as file:
@@ -382,7 +382,7 @@ def get_neuro_patients(con, legacy=False) -> pd.DataFrame:
     else:
         # gets the SQL source file
         dirname = ''
-        filename = '/usr/local/lib/python3.12/dist-packages/amsterdamumcdb/sql/diagnosis/neuro.sql'
+        filename = '/content/drive/MyDrive/AmsterdamUMCdb_Group19/amsterdamumcdb/sql/diagnosis/neuro.sql'
         sql_filename = os.path.join(dirname, filename)
 
         with open(sql_filename, 'r') as file:
@@ -408,7 +408,7 @@ def get_cardio_patients(con, legacy=False) -> pd.DataFrame:
     else:
         # gets the SQL source file
         dirname = ''
-        filename = '/usr/local/lib/python3.12/dist-packages/amsterdamumcdb/sql/diagnosis/cardio.sql'
+        filename = '/content/drive/MyDrive/AmsterdamUMCdb_Group19/amsterdamumcdb/sql/diagnosis/cardio.sql'
         sql_filename = os.path.join(dirname, filename)
 
         with open(sql_filename, 'r') as file:
@@ -500,7 +500,7 @@ def get_infection_patients(con, legacy=False) -> pd.DataFrame:
     else:
         # gets the SQL source file
         dirname = ''
-        filename = '/usr/local/lib/python3.12/dist-packages/amsterdamumcdb/sql/diagnosis/infection.sql'
+        filename = '/content/drive/MyDrive/AmsterdamUMCdb_Group19/amsterdamumcdb/sql/diagnosis/infection.sql'
         sql_filename = os.path.join(dirname, filename)
 
         with open(sql_filename, 'r') as file:
@@ -587,9 +587,9 @@ def get_reason_for_admission(con, legacy=False) -> pd.DataFrame:
     # gets the SQL source file
     dirname = ''
     if legacy:
-        filename = '/usr/local/lib/python3.12/dist-packages/amsterdamumcdb/sql/diagnosis/reason_for_admission.sql'
+        filename = '/content/drive/MyDrive/AmsterdamUMCdb_Group19/amsterdamumcdb/sql/diagnosis/reason_for_admission.sql'
     else:
-        filename = '/usr/local/lib/python3.12/dist-packages/amsterdamumcdb/sql/diagnosis/reason_for_admission.sql'
+        filename = '/content/drive/MyDrive/AmsterdamUMCdb_Group19/amsterdamumcdb/sql/diagnosis/reason_for_admission.sql'
     sql_filename = os.path.join(dirname, filename)
 
     with open(sql_filename, 'r') as file:
