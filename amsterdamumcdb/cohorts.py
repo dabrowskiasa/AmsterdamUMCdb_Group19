@@ -135,7 +135,7 @@ def get_surgical_patients(con, legacy=False) -> pd.DataFrame:
     else:
         # gets the SQL source file
         dirname = ''
-        filename = '/usr/local/lib/python3.12/dist-packages/amsterdamumcdb/sql/diagnosis/surgical.sql'
+        filename = '/content/drive/MyDrive/AmsterdamUMCdb_Group19/amsterdamumcdb/sql/diagnosis/surgical.sql'
         sql_filename = os.path.join(dirname, filename)
 
         with open(sql_filename, 'r') as file:
