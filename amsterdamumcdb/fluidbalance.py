@@ -31,8 +31,8 @@ def get_fluidbalance(admissionid, from_date, to_date, con,  legacy=False) -> pd.
             raise Exception("to_date is not a number: %r" % to_date)
 
         # gets the SQL source file
-        dirname = os.path.dirname(os.path.abspath(__file__))
-        filename = './sql/functions/get_fluidbalance.sql'
+        dirname = ''
+        filename = '/content/drive/MyDrive/AmsterdamUMCdb_Group19/amsterdamumcdb/sql/functions/legacy/get_fluidbalance.sql'
         sqlfile = os.path.join(dirname, filename)
 
         file = open(sqlfile, 'r')
