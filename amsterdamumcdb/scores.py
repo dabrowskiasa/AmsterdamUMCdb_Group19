@@ -21,7 +21,7 @@ def get_sofa_respiration(con, legacy=False) -> pd.DataFrame:
     print('Querying SOFA Respiration...')
 
     if legacy:
-        filename = '/content/drive/MyDrive/AmsterdamUMCdb_Group19/amsterdamumcdb/sql/common/legacy/pO2_pCO2_FiO2.sql'
+        filename = '/content/drive/MyDrive/AmsterdamUMCdb_Group19/amsterdamumcdb/sql/common/legacy/pO2_FiO2_estimated.sql'
     else:
         raise NotImplementedError("Work in progress. Function not yet available for OMOP CDM version.")
 
