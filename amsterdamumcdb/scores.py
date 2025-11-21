@@ -7,7 +7,7 @@ from .util import read_sql
 dirname = ''
 
 
-def get_sofa_respiration(con, legacy=False) -> pd.DataFrame:
+def get_sofa_respiration(con, legacy=True) -> pd.DataFrame:
     """
     Return SOFA Respiration: PaO2 / FiO2 (mmHg)
 
@@ -61,7 +61,7 @@ def get_sofa_respiration(con, legacy=False) -> pd.DataFrame:
     return sofa_respiration.sort_values(by=['admissionid', 'time']).reset_index(drop=True)
 
 
-def get_sofa_cardiovascular_meds(con, legacy=False) -> pd.DataFrame:
+def get_sofa_cardiovascular_meds(con, legacy=True) -> pd.DataFrame:
     """
     Returns SOFA: Cardiovascular - Hypotension, cardiovascular medication: vasopressors and / or inotropes
     Arguments:
@@ -119,7 +119,7 @@ def get_sofa_cardiovascular_meds(con, legacy=False) -> pd.DataFrame:
         drop=True)
 
 
-def get_sofa_platelets(con, legacy=False) -> pd.DataFrame:
+def get_sofa_platelets(con, legacy=True) -> pd.DataFrame:
     """
     Return SOFA Coagulation score.
 
@@ -154,7 +154,7 @@ def get_sofa_platelets(con, legacy=False) -> pd.DataFrame:
     return sofa_platelets.sort_values(by=['admissionid', 'itemid', 'time']).reset_index(drop=True)
 
 
-def get_sofa_bilirubin(con, legacy=False) -> pd.DataFrame:
+def get_sofa_bilirubin(con, legacy=True) -> pd.DataFrame:
     """
     Returns SOFA Liver scores.
 
@@ -188,7 +188,7 @@ def get_sofa_bilirubin(con, legacy=False) -> pd.DataFrame:
     return sofa_bilirubin.sort_values(by=['admissionid', 'itemid', 'time']).reset_index(drop=True)
 
 
-def get_sofa_cardiovascular_map(con, legacy=False):
+def get_sofa_cardiovascular_map(con, legacy=True):
     """
     Returns SOFA Mean arterial pressure score
     Arguments:
@@ -225,7 +225,7 @@ def get_sofa_cardiovascular_map(con, legacy=False):
     return sofa_cardiovascular_map.sort_values(by=['admissionid']).reset_index(drop=True)
 
 
-def get_sofa_cns(con, legacy=False) -> pd.DataFrame:
+def get_sofa_cns(con, legacy=True) -> pd.DataFrame:
     """
     Return SOFA Central nervous system score
 
@@ -323,7 +323,7 @@ def get_sofa_cns(con, legacy=False) -> pd.DataFrame:
     return sofa_cns.sort_values(by=['admissionid', 'time']).reset_index(drop=True)
 
 
-def get_sofa_renal_daily_urine_output(con, legacy=False) -> pd.DataFrame:
+def get_sofa_renal_daily_urine_output(con, legacy=True) -> pd.DataFrame:
     """
     Return SOFA Urine output score
 
@@ -372,7 +372,7 @@ def get_sofa_renal_daily_urine_output(con, legacy=False) -> pd.DataFrame:
     return sofa_renal_daily_urine_output.sort_values(by=['admissionid']).reset_index(drop=True)
 
 
-def get_sofa_renal_creatinine(con, legacy=False) -> pd.DataFrame:
+def get_sofa_renal_creatinine(con, legacy=True) -> pd.DataFrame:
     print('Querying SOFA Renal: creatinine...')
     # get serum creatinine
 
@@ -426,7 +426,7 @@ def get_sofa_renal_creatinine(con, legacy=False) -> pd.DataFrame:
     return sofa_renal_creatinine.sort_values(by=['admissionid']).reset_index(drop=True)
 
 
-def get_sofa_admission(con, legacy=False) -> pd.DataFrame:
+def get_sofa_admission(con, legacy=True) -> pd.DataFrame:
     """
     Returns a dataframe containing SOFA score in the first 24 hours of ICU admission for all patients.
     See the [SOFA](https://github.com/AmsterdamUMC/AmsterdamUMCdb/blob/master/concepts/severityscores/sofa.ipynb)
