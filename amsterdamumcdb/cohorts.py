@@ -123,7 +123,7 @@ re_medical = '(?:' + \
              ')'
 
 
-def get_surgical_patients(con, legacy=False) -> pd.DataFrame:
+def get_surgical_patients(con, legacy=True) -> pd.DataFrame:
     """Returns a dataframe containing patients with a surgical reason for admission.
 
     Arguments:
@@ -143,7 +143,7 @@ def get_surgical_patients(con, legacy=False) -> pd.DataFrame:
         return read_sql(sql, con)
 
 
-def get_medical_patients(con, legacy=False) -> pd.DataFrame:
+def get_medical_patients(con, legacy=True) -> pd.DataFrame:
     """Returns a dataframe containing patients with a medical reason for admission.
 
     Arguments:
@@ -164,7 +164,7 @@ def get_medical_patients(con, legacy=False) -> pd.DataFrame:
 
 
 
-def get_cardiothoracic_surgery_patients(con, legacy=False) -> pd.DataFrame:
+def get_cardiothoracic_surgery_patients(con, legacy=True) -> pd.DataFrame:
     """Returns a dataframe containing patients with cardio-thoracic surgery as the primary reason for admission.
 
     Arguments:
@@ -186,7 +186,7 @@ def get_cardiothoracic_surgery_patients(con, legacy=False) -> pd.DataFrame:
         return read_sql(sql, con)
 
 
-def get_respiratory_failure_patients(con, legacy=False) -> pd.DataFrame:
+def get_respiratory_failure_patients(con, legacy=True) -> pd.DataFrame:
     """Returns a dataframe containing patients with respiratory failure as the primary reason for admission. Please
     note that many patients that suffer from (septic) shock will require mechanical ventilation often due to secondary
     respiratory failure (e.g. due to acute respiratory distress syndrome)
@@ -223,7 +223,7 @@ def get_respiratory_failure_patients(con, legacy=False) -> pd.DataFrame:
 
 
 
-def get_neurosurgery_patients(con, legacy=False) -> pd.DataFrame:
+def get_neurosurgery_patients(con, legacy=True) -> pd.DataFrame:
     """Returns a dataframe containing patients with neurosurgery as the primary reason for admission.
 
     Arguments:
@@ -248,7 +248,7 @@ def get_neurosurgery_patients(con, legacy=False) -> pd.DataFrame:
         return read_sql(sql, con)
 
 
-def get_gastrointestinal_surgery_patients(con, legacy=False) -> pd.DataFrame:
+def get_gastrointestinal_surgery_patients(con, legacy=True) -> pd.DataFrame:
     """Returns a dataframe containing patients with gastro-intestinal surgery as the primary reason for admission.
 
     Arguments:
@@ -273,7 +273,7 @@ def get_gastrointestinal_surgery_patients(con, legacy=False) -> pd.DataFrame:
         return read_sql(sql, con)
 
 
-def get_cardiac_arrest_patients(con, legacy=False) -> pd.DataFrame:
+def get_cardiac_arrest_patients(con, legacy=True) -> pd.DataFrame:
     """Returns a dataframe containing patients with cardiac arrest as the primary reason for admission.
 
     Arguments:
@@ -303,7 +303,7 @@ def get_cardiac_arrest_patients(con, legacy=False) -> pd.DataFrame:
         return read_sql(sql, con)
 
 
-def get_vascular_surgery_patients(con, legacy=False) -> pd.DataFrame:
+def get_vascular_surgery_patients(con, legacy=True) -> pd.DataFrame:
     """Returns a dataframe containing patients with vascular surgery as the primary reason for admission.
 
     Arguments:
@@ -331,7 +331,7 @@ def get_vascular_surgery_patients(con, legacy=False) -> pd.DataFrame:
         return read_sql(sql, con)
 
 
-def get_trauma_patients(con, legacy=False) -> pd.DataFrame:
+def get_trauma_patients(con, legacy=True) -> pd.DataFrame:
     """Returns a dataframe containing patients with trauma as the primary reason for admission.
 
     Arguments:
@@ -362,7 +362,7 @@ def get_trauma_patients(con, legacy=False) -> pd.DataFrame:
         return read_sql(sql, con)
 
 
-def get_neuro_patients(con, legacy=False) -> pd.DataFrame:
+def get_neuro_patients(con, legacy=True) -> pd.DataFrame:
     """Returns a dataframe containing patients with a neurologic disorders as the primary reason for admission.
 
     Arguments:
@@ -390,7 +390,7 @@ def get_neuro_patients(con, legacy=False) -> pd.DataFrame:
         return read_sql(sql, con)
 
 
-def get_cardio_patients(con, legacy=False) -> pd.DataFrame:
+def get_cardio_patients(con, legacy=True) -> pd.DataFrame:
     """Returns a dataframe containing patients with a cardiac disorders as the primary reason for admission.
 
     Arguments:
@@ -416,7 +416,7 @@ def get_cardio_patients(con, legacy=False) -> pd.DataFrame:
         return read_sql(sql, con)
 
 
-def get_sepsis_patients(con, legacy=False) -> pd.DataFrame:
+def get_sepsis_patients(con, legacy=True) -> pd.DataFrame:
     """Returns a dataframe containing patients with a diagnosis of sepsis at admission.
 
     The [Sepsis-3 definition](https://jamanetwork-com.vu-nl.idm.oclc.org/journals/jama/fullarticle/2492881)
@@ -457,7 +457,7 @@ def get_sepsis_patients(con, legacy=False) -> pd.DataFrame:
         raise NotImplementedError("Work in progress. Function not yet available for OMOP CDM version.")
 
 
-def get_infection_patients(con, legacy=False) -> pd.DataFrame:
+def get_infection_patients(con, legacy=True) -> pd.DataFrame:
     """Returns a dataframe containing patients with a (suspected) infection as the primary reason for admission.
     Similar to the Sepsis-3 cohort patients, but without using SOFA to select patients.
 
@@ -508,7 +508,7 @@ def get_infection_patients(con, legacy=False) -> pd.DataFrame:
         return read_sql(sql, con)
 
 
-def get_shock_patients(con, legacy=False) -> pd.DataFrame:
+def get_shock_patients(con, legacy=True) -> pd.DataFrame:
     """Returns a dataframe containing all patients that present with or develop shock within 24 hours of admission.
     Definition:
     - Vasopressor or inotrope administered, AND
@@ -548,7 +548,7 @@ def get_shock_patients(con, legacy=False) -> pd.DataFrame:
         raise NotImplementedError("Work in progress. Function not yet available for OMOP CDM version.")
 
 
-def get_invasive_ventilation_patients(con, legacy=False) -> pd.DataFrame:
+def get_invasive_ventilation_patients(con, legacy=True) -> pd.DataFrame:
     """Returns a dataframe containing all patients that were mechanically ventilated using an invasive mode.
     Definition:
     - Mechanical ventilation mode compatible with invasive ventilation.
@@ -577,7 +577,7 @@ def get_invasive_ventilation_patients(con, legacy=False) -> pd.DataFrame:
         raise NotImplementedError("Work in progress. Function not yet available for OMOP CDM version.")
 
 
-def get_reason_for_admission(con, legacy=False) -> pd.DataFrame:
+def get_reason_for_admission(con, legacy=True) -> pd.DataFrame:
     """Returns a dataframe containing all patients with reasons for admission.
 
     Arguments:
