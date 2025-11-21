@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 
-def get_fluidbalance(admissionid, from_date, to_date, con,  legacy=False) -> pd.DataFrame:
+def get_fluidbalance(admissionid, from_date, to_date, con,  legacy=True) -> pd.DataFrame:
     """Calculate the fluid balance (i.e. fluid input - fluid output) for a specific time interval.
     Typically this will be used to calculate daily fluid balances.
 
