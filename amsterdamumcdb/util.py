@@ -55,7 +55,7 @@ def pg2bq(sql):
     return sql_translated
 
 
-def union_tables(match_object, legacy=False):
+def union_tables(match_object, legacy=True):
     """
     Replaces FROM/JOIN statement of numericitems/listitems with UNION ALL to retrieve all unvalidated records
     """
@@ -69,7 +69,7 @@ def union_tables(match_object, legacy=False):
         return f'{command} (SELECT * FROM {table} UNION ALL SELECT * FROM {table}_unvalidated) {table} '
 
 
-def exclude_unvalidated(match_object, legacy=False):
+def exclude_unvalidated(match_object, legacy=True):
     """
     Excluded unvalidated data from the numericitems and listitems table by adding `WHERE NOT registeredby IS NULL`
     to the respective FROM/JOIN table statements.
@@ -84,7 +84,7 @@ def exclude_unvalidated(match_object, legacy=False):
         return f'{command} (SELECT * FROM {table} WHERE NOT registeredby IS NULL) {table} '
 
 
-def select_validated(sql, con, include_unvalidated=False, legacy=False):
+def select_validated(sql, con, include_unvalidated=False, legacy=True):
     """
     Translate query by either including or excluding unvalidated (high volume) data
     When using BigQuery:
@@ -126,7 +126,7 @@ def select_validated(sql, con, include_unvalidated=False, legacy=False):
             return sql
 
 
-def read_sql(sql, con, include_unvalidated=False, legacy=False):
+def read_sql(sql, con, include_unvalidated=False, legacy=True):
     """
     Small wrapper around Pandas read_sql and read_gbq to de-duplicate code fragments that should work both on (local)
     postgreSQL instances and Google BigQuery ofr AmsterdamUMCdb.
